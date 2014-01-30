@@ -20,11 +20,12 @@ Deck::Deck()
 		}
 		else if(i < (13*2))
 		{	
-			*/????? 
+			deck[i] = new Card('S','R')
+			
 		}
 		else if(i < (13*3))
 		{
-
+*/????? 
 		}
 		else
 		{
@@ -45,6 +46,24 @@ Deck::Deck(const Deck& obj)
 }
 void Deck::cut()
 {
+	/*basic idea
+		int a = 4;
+		int b = 6; switch them 
+
+		int c = a;
+		a = b;
+		b = c;  
+	*/
+	int half_size = (int) size / 2;
+	Card temp[half_size];
+	for (int i = 0; i < half_size; ++i)
+	{
+		temp[i] = deck[i];
+		deck[i] = deck[half_size + i];
+		deck[half_size + i] = deck[i];
+	}
+	
+
 
 }
 void Deck::shuffle()
@@ -117,7 +136,7 @@ bool Deck::operator==(const Deck& obj)
 	bool equality = false;
 	if(howmany == obj.howmany)
 	{
-		for (int i = 0; i < howmany; ++i)
+		for (int i = 0; i < howmany; ++i
 		{
 			if()
 		}

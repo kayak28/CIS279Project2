@@ -41,3 +41,4 @@ ostream& operator<<(ostream& out, const Card& obj)
 	return out;
 }
 
+
