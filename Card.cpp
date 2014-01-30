@@ -14,6 +14,14 @@ Card::Card(char mark, char num)
 	suit = mark;
 	rank = num;
 }
+char Card::getSuit()
+{
+	return suit;
+}
+char Card::getRank()
+{
+	return rank;
+}
 bool Card::operator==(const Card& obj)const 
 {
 	bool identical = false;
@@ -32,3 +40,4 @@ ostream& operator<<(ostream& out, const Card& obj)
 	out << "rank is " << obj.rank << "\n";
 	return out;
 }
+

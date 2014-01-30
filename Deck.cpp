@@ -14,12 +14,34 @@ Deck::Deck()
 	deck[size];
 	for (int i = 0; i < howmany; ++i)
 	{
-		deck[i] = new Card('','');
+		if(i<13)
+		{
+			deck[i] = new Card('S','R');
+		}
+		else if(i < (13*2))
+		{	
+			*/????? 
+		}
+		else if(i < (13*3))
+		{
+
+		}
+		else
+		{
+
+		}
 	}
+		
 }
 Deck::Deck(const Deck& obj)
 {
-
+	size = obj.size;
+	howmany = obj.howmany;
+	deck[size];
+	for (int i = 0; i < howmany; ++i)
+	{
+		deck[i] = obj.deck[i];
+	}
 }
 void Deck::cut()
 {
@@ -43,11 +65,26 @@ Card Deck::takeOne()
 }
 void Deck::addOne(const Card& obj)
 {
-
+	if(isFull()||contains())
+	{
+		if(isFull())
+		{
+			printf("This deck is full\n");
+		}
+		else if(contains())
+		{
+			throw new DeckException("The given Card already exists");
+		}
+		else
+		{
+			howmany++;
+			deck[howmany] = obj;
+		}
+	}
 }
 int Deck::getCount() const
 {
-
+	return howmany;
 }
 bool Deck::contains(const Card& obj)const
 {
@@ -60,11 +97,16 @@ bool Deck::isEmpty() const
 	{
 		empty = true;
 	}
-	else
-	{
-		empty = false;
-	}
 	return empty;
+}
+bool Deck::isFull()
+{
+	bool full = false;
+	if(howmany == size)
+	{
+		full = true;
+	}
+	return full;
 }
 int Deck::largest() const
 {
@@ -72,6 +114,19 @@ int Deck::largest() const
 }
 bool Deck::operator==(const Deck& obj)
 {
+	bool equality = false;
+	if(howmany == obj.howmany)
+	{
+		for (int i = 0; i < howmany; ++i)
+		{
+			if()
+		}
+	}
+	else
+	{
+		return equality;
+	}
+
 
 }
 Deck Deck::union(const Deck& obj1, const Deck& obj2)
