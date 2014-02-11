@@ -7,7 +7,7 @@ using namespace std;
 
 DeckException::DeckException(string warning)
 {
-	error = waring;
+	error = warning;
 }
 DeckException::DeckException()
 {

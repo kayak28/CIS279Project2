@@ -2,9 +2,9 @@
 #include "Deck.h"
 #include <string>
 #include <iostream>
-#include <stdlib.h>
-#include <stdio.h>
-
+#include <stdlib.h> // srand, rand
+#include <stdio.h> // printf, scanf, puts, null
+#include <time.h> //time
 using namespace std;
 
 Deck::Deck()
@@ -12,25 +12,90 @@ Deck::Deck()
 	size = 53;
 	howmany = 53;
 	deck[size];
-	for (int i = 0; i < howmany; ++i)
+	char suit;
+	for (int i = 0; i < 13; ++i)
 	{
-		if(i<13)
+		if(i = 0 || i = 11 || i = 12|| )
 		{
-			deck[i] = new Card('S','R');
-		}
-		else if(i < (13*2))
-		{	
-			deck[i] = new Card('S','R')
+			if(i = 0)
+			{
+				deck[i] = new Card('H', 'A');
+			}
+			else if(i = 11)
+			{
+				deck[i] = new Card('H','J');
+			}
+			else
+			{
+				deck[i] = new Card('H','K');
+			}
 			
-		}
-		else if(i < (13*3))
+ 		}
+ 		itoa(i, suit, 10);
+		deck[i] = new Card('H',suit);
+	}
+	for (int i = 0; i < 13; ++i)
+	{
+		if(i = 0 || i = 11 || i = 12|| )
 		{
-*/????? 
-		}
-		else
+			if(i = 0)
+			{
+				deck[i] = new Card('D', 'A');
+			}
+			else if(i = 11)
+			{
+				deck[i] = new Card('D','J');
+			}
+			else
+			{
+				deck[i] = new Card('D','K');
+			}
+			
+ 		}
+ 		itoa(i, suit, 10);
+		deck[i] = new Card('D',suit);
+	}
+	for (int i = 0; i < 13; ++i)
+	{
+		if(i = 0 || i = 11 || i = 12|| )
 		{
-
-		}
+			if(i = 0)
+			{
+				deck[i] = new Card('S', 'A');
+			}
+			else if(i = 11)
+			{
+				deck[i] = new Card('S','J');
+			}
+			else
+			{
+				deck[i] = new Card('S','K');
+			}
+			
+ 		}
+ 		itoa(i, suit, 10);
+		deck[i] = new Card('S',suit);
+	}
+	for (int i = 0; i < 13; ++i)
+	{
+		if(i = 0 || i = 11 || i = 12|| )
+		{
+			if(i = 0)
+			{
+				deck[i] = new Card('C', 'A');
+			}
+			else if(i = 11)
+			{
+				deck[i] = new Card('C','J');
+			}
+			else
+			{
+				deck[i] = new Card('C','K');
+			}
+			
+ 		}
+ 		itoa(i, suit, 10);
+		deck[i] = new Card('C',suit);
 	}
 		
 }
@@ -62,13 +127,15 @@ void Deck::cut()
 		deck[i] = deck[half_size + i];
 		deck[half_size + i] = deck[i];
 	}
-	
-
-
 }
 void Deck::shuffle()
 {
-
+	srand(time(NULL));//initialize rand seed
+	int index1 = rand % howmany;
+	int index2 = rand % howmany;
+	Card temp = deck[index1];
+	deck[index1] = deck[index2];
+	deck[index2] = temp;
 }
 Card Deck::takeOne()
 {

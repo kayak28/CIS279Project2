@@ -6,7 +6,7 @@ class Card
 	public: 
 		Card();
 		Card(char suit, char rank);
-		bool operator==(const Card& obj) const;
+		bool operator==(const Card& obj);
 		friend ostream& operator<<(ostream& out, const Card& obj);
 		char getSuit() const;
 		char getRank() const;
@@ -15,4 +15,4 @@ class Card
 		char rank;
 		//char[] suit = {'H','D','S','C'};
 		//char[] rank = {}
-}
+};
